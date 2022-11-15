@@ -11,5 +11,15 @@
 /build
 /captures
 .externalNativeBuild
-.cxx
+/.idea/*
+/.idea
+/.idea/
+.gradle/*
 local.properties
+*.jks
+*.apk
+*.aab
+*.apks
+/app/prod/release/output-metadata.json
+/app/lint-baseline.xml
+/app/dev/release/output-metadata.json

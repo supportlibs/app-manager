@@ -34,7 +34,6 @@
                 android:scaleType="centerInside"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
-                app:lottie_rawRes="@raw/setting_icon"
                 app:layout_constraintBottom_toTopOf="@+id/info"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -74,20 +73,11 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <Button
-                    android:id="@+id/btn_optimize_back"
-                    android:layout_marginHorizontal="@dimen/_10sdp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/ic_opt_button_active"
-                    android:clickable="false"/>
-
-                <Button
                     android:id="@+id/btn_yes"
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
-                    android:background="@drawable/ic_optimize_btn_without_back"
                     android:text="Go to settings"
                     android:textSize="@dimen/_10sdp"
                     android:textStyle="bold" />
