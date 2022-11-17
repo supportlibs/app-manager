@@ -17,7 +17,8 @@ class CustomDialogFragment(
     private val message: String,
     private val buttonText: String,
     private val buttonSrc: Int,
-    private val lottieRawRes: Int
+    private val lottieRawRes: Int,
+    private val cardViewBackground: Int
 ) : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -31,6 +32,7 @@ class CustomDialogFragment(
         btn_yes.text = buttonText
         btn_yes.background = ContextCompat.getDrawable(requireContext(), buttonSrc)
         img.setAnimation(lottieRawRes)
+        card_view.setCardBackgroundColor(cardViewBackground)
         btn_close.setOnClickListener {
             dismiss()
         }
@@ -53,6 +55,7 @@ class CustomDialogFragment(
         private var buttonText: String? = null
         private var buttonSrc: Int? = null
         private var lottieRawRes: Int? = null
+        private var cardViewBackground: Int? = null
 
         fun setTitle(title: String): Builder {
             this.title = title
@@ -79,6 +82,11 @@ class CustomDialogFragment(
             return this
         }
 
-        fun build(): CustomDialogFragment = CustomDialogFragment(title!!, message!!, buttonText!!, buttonSrc!!, lottieRawRes!!)
+        fun setCardViewBackground(color: Int): Builder {
+            this.cardViewBackground = color
+            return this
+        }
+
+        fun build(): CustomDialogFragment = CustomDialogFragment(title!!, message!!, buttonText!!, buttonSrc!!, lottieRawRes!!, cardViewBackground!!)
     }
 }
