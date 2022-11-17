@@ -18,7 +18,9 @@ class CustomDialogFragment(
     private val buttonText: String,
     private val buttonSrc: Int,
     private val lottieRawRes: Int,
-    private val cardViewBackground: Int
+    private val cardViewBackground: Int,
+    private val textColor: Int,
+    private val buttonTextColor: Int
 ) : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -28,11 +30,15 @@ class CustomDialogFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         massage_title.text = title
+        massage_title.setTextColor(textColor)
         info.text = message
+        info.setTextColor(textColor)
+        btn_yes.setTextColor(buttonTextColor)
         btn_yes.text = buttonText
         btn_yes.background = ContextCompat.getDrawable(requireContext(), buttonSrc)
         img.setAnimation(lottieRawRes)
         card_view.setCardBackgroundColor(cardViewBackground)
+
         btn_close.setOnClickListener {
             dismiss()
         }
@@ -56,6 +62,8 @@ class CustomDialogFragment(
         private var buttonSrc: Int? = null
         private var lottieRawRes: Int? = null
         private var cardViewBackground: Int? = null
+        private var textMessageColor: Int? = null
+        private var buttonTextColor: Int? = null
 
         fun setTitle(title: String): Builder {
             this.title = title
@@ -87,6 +95,25 @@ class CustomDialogFragment(
             return this
         }
 
-        fun build(): CustomDialogFragment = CustomDialogFragment(title!!, message!!, buttonText!!, buttonSrc!!, lottieRawRes!!, cardViewBackground!!)
+        fun setTextMessageColor(color: Int): Builder {
+            this.textMessageColor = color
+            return this
+        }
+
+        fun setButtonTextColor(color: Int): Builder {
+            this.buttonTextColor = color
+            return this
+        }
+
+        fun build(): CustomDialogFragment = CustomDialogFragment(
+            title!!,
+            message!!,
+            buttonText!!,
+            buttonSrc!!,
+            lottieRawRes!!,
+            cardViewBackground!!,
+            textMessageColor!!,
+            buttonTextColor!!
+            )
     }
 }
