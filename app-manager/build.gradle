@@ -45,8 +45,8 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     implementation 'com.airbnb.android:lottie:5.2.0'
 
-    // Ads
-    implementation 'com.google.android.gms:play-services-ads:21.3.0'
+//    // Ads
+//    implementation 'com.google.android.gms:play-services-ads:21.3.0'
 }
 
 afterEvaluate {
@@ -57,7 +57,7 @@ afterEvaluate {
 
                 groupId = 'com.github.supportlibs'
                 artifactId = 'app-manager'
-                version = '1.0.1'
+                version = '1.0.3'
             }
         }
     }
